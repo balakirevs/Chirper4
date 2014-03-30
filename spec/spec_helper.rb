@@ -49,7 +49,7 @@ Spork.prefork do
       c.syntax = :expect
     end
     config.before(:all) { DeferredGarbageCollection.start }
-    config.after(:all) { DeferredGarbageCollection.reconsider }
+    config.after(:all)  { DeferredGarbageCollection.reconsider }
   end
 end
 
