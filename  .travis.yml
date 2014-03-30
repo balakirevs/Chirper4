@@ -1,0 +1,24 @@
+language: ruby
+
+rvm:
+  - 2.1.1
+
+branches:
+  only:
+    - master
+
+bundler_args: --without development:production --path vendor/bundle
+
+before_install:
+  - gem update --system
+  - gem --version
+  - gem update bundler
+
+script:
+  - RAILS_ENV=test bundle exec rake db:create db:migrate db:populate spec
+
+notifications:
+  emails:
+    - info@balakiriev.com
+  on_success: change
+  on_failure: always
