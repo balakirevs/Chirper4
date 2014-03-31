@@ -38,6 +38,7 @@ gem 'coffee-rails', '4.0.1'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'jbuilder', '~>1.2'
+gem 'coveralls', require: false
 
 group :doc do
   gem 'sdoc',  require: false
