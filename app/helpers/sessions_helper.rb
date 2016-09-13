@@ -17,7 +17,7 @@ module SessionsHelper
     user == current_user
   end
 
-  # Returns the current logged-in user (if any).
+  # Returns the user corresponding to the remember token cookie.
   def current_user
     if (user_id = session[:user_id])
       @current_user ||= User.find_by(id: user_id)
@@ -57,6 +57,6 @@ module SessionsHelper
 
   # Stores the URL trying to be accessed.
   def store_location
-    session[:forwarding_url] = request.url if request.get?
+    session[:forwarding_url] = request.original_url if request.get?
   end
 end
