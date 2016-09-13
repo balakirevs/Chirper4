@@ -8,8 +8,8 @@ In particular, as a first debugging check I suggest getting the test suite to pa
 ```
 $ cd ~/workspace
 $ git clone https://github.com/balakirevs/Chirper4.git
-$ cd chirper5
-$ git checkout chirper5_v3
+$ cd Chirper4
+$ git checkout chirper5
 $ bundle install --without production
 $ bundle exec rails db:migrate
 $ bundle exec rails test
